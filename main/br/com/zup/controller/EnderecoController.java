@@ -17,13 +17,13 @@ public class EnderecoController {
 	
 	@RequestMapping("/enderecoPorCep")
 	public Endereco buscarEnderecoPorCep(@RequestParam(value="cep") String cep) {
-		servico.buscarEnderecoPorCep(cep);
-		return new Endereco(new Cep(cep));
+		Endereco endereco = servico.buscarEnderecoPorCep(cep);
+		return endereco;
 	}
 	
 	@RequestMapping("/cepPorEndereco")
 	public Endereco buscarCepPorEndereco(@RequestParam(value="logradouro") String logradouro, @RequestParam(value="cidade") String cidade) {
-		return new Endereco(logradouro, "1111", cidade);
+		return new Endereco(new Cep("cep"));
 	}
 
 }

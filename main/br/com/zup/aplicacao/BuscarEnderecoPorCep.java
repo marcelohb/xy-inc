@@ -1,12 +1,11 @@
 package br.com.zup.aplicacao;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import br.com.zup.dominio.Endereco;
 
@@ -18,9 +17,13 @@ public class BuscarEnderecoPorCep {
 	@Autowired
 	private Environment app;
 	
-	public List<Endereco> buscarEnderecoPorCep(String cep) {
+	public Endereco buscarEnderecoPorCep(String cep) {
 		LOGGER.info("Buscando: " + cep);
-		
-		return null;
+		String url = app.getProperty("urlViaCep.buscarPorCep")+cep+app.getProperty("urlViaCep.formato");
+		LOGGER.info("URL>"+url);
+		RestTemplate restTemplate = new RestTemplate();
+		Endereco endereco = restTemplate.getForObject(url, Endereco.class);
+		LOGGER.info("Encontrado " + endereco);
+		return endereco;
 	}
 }

@@ -3,18 +3,26 @@ package br.com.zup.dominio;
 public class Endereco {
 	
 	private String logradouro;
-	private String cidade;
+	private String complemento;
+	private String bairro;
+	private String localidade;
+	private String uf;
 	private String numero;
 	private Cep cep;
+	
+	public Endereco() {}
 	
 	public Endereco(Cep cep) {
 		this.cep = cep;
 	}
 	
-	public Endereco(String logradouro, String numero, String cidade) {
+	public Endereco(String cep, String logradouro, String complemento, String bairro, String localidade, String uf, String unidade, String ibge, String gia) {
+		this.cep = new Cep(cep);
 		this.logradouro = logradouro;
-		this.numero = numero;
-		this.cidade = cidade;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.localidade = localidade;
+		this.uf = uf;
 	}
 	
 	public String getLogradouro() {
@@ -25,12 +33,12 @@ public class Endereco {
 		this.logradouro = logradouro;
 	}
 	
-	public String getCidade() {
-		return cidade;
+	public String getLocalidade() {
+		return localidade;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void setLocalidade(String localidade) {
+		this.localidade = localidade;
 	}
 
 	public String getNumero() {
@@ -41,16 +49,35 @@ public class Endereco {
 		this.numero = numero;
 	}
 
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getUf() {
+		return uf;
+	}
+
+	public void setUf(String uf) {
+		this.uf = uf;
+	}
+
 	public Cep getCep() {
 		return cep;
 	}
 
 	public void setCep(Cep cep) {
 		this.cep = cep;
-	}
-
-	@Override
-	public String toString() {
-		return this.logradouro;
 	}
 }
