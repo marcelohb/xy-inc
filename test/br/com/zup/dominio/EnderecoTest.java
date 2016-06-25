@@ -1,9 +1,9 @@
 package br.com.zup.dominio;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,8 +24,14 @@ public class EnderecoTest {
 	}
 	
 	@Test
-	public void existeEndereco() {
-		assertTrue(enderecos.contains(new Cep("14000999")));
+	public void contaEnderecos() {
+		assertEquals(4, enderecos.size());
+	}
+	
+	@Test
+	public void existeEndreco() {
+		Endereco novo = enderecos.get(1);
+		assertEquals(new Endereco(new Cep("20000555")), novo);
 	}
 
 }

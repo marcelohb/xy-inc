@@ -19,7 +19,6 @@ public class EnderecoControllerTest {
 	Endereco endereco;
 	List<Endereco> enderecos;
 	
-	//{"logradouro":"Rua Visconde de Inhaúma","complemento":"até 1398/1399","bairro":"Centro","localidade":"Ribeirão Preto","uf":"SP","cep":{"cep":"14010-100"}}
 	@Test
 	public void retornarMeuCep() {
 		endereco = servico.buscarEnderecoPorCep("14010160");
