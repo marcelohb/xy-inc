@@ -7,7 +7,6 @@ public class Endereco {
 	private String bairro;
 	private String localidade;
 	private String uf;
-	private String numero;
 	private Cep cep;
 	
 	public Endereco() {}
@@ -39,14 +38,6 @@ public class Endereco {
 
 	public void setLocalidade(String localidade) {
 		this.localidade = localidade;
-	}
-
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
 	}
 
 	public String getComplemento() {
