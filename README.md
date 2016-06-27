@@ -43,7 +43,7 @@ urlViaCep.formato=/json
 
 ```   
 
-Serviçoes
+Serviços
 =========
 
 Os serviços disponíveis encontram-se nos endereços:
