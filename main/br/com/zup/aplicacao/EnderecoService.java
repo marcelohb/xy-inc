@@ -25,7 +25,7 @@ public class EnderecoService {
 			LOGGER.info("Buscando: " + cep);
 			String url = app.getProperty("urlViaCep.buscarEndereco")+cep+app.getProperty("urlViaCep.formato");
 			LOGGER.info("URL>"+url);
-			return restTemplate.getForObject(url, Endereco.class);	
+			return restTemplate.getForObject(url, Endereco.class);
 		} catch (Exception e) {
 			return null;
 		}

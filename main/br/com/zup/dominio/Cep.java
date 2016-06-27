@@ -5,7 +5,19 @@ public class Cep {
 	private String cep;
 	
 	public Cep(String cep) {
-		this.cep = cep;
+		this.cep = cep.replace("-", "");
+		validar();
+	}
+	
+	private void validar() throws IllegalArgumentException {
+		
+		if (this.cep.length() != 8) {
+			throw new IllegalArgumentException("CEP INCORRETO");
+		}
+		
+		if(cep.replaceAll("[^0-9]", "").length() != 8){
+			throw new IllegalArgumentException("CEP DEVE POSSUIR SOMENTE NÚMEROS!");
+		}
 	}
 	
 	public void setCep(String cep) {
